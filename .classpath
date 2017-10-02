@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="/home/raider/eclipse-workspace/ProxySeguroCanguro/lib/netty-all-4.1.15.Final.jar"/>
 	<classpathentry kind="lib" path="/home/raider/eclipse-workspace/ProxySeguroCanguro/lib/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="lib" path="/home/raider/eclipse-workspace/ProxySeguroCanguro/lib/slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="lib" path="/home/raider/eclipse-workspace/ProxySeguroCanguro/lib/json-20170516.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

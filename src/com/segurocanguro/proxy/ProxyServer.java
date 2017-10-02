@@ -14,14 +14,20 @@ public class ProxyServer {
 
 	public HttpServer<ByteBuf, ByteBuf> createServer() {
 		return RxNetty.createHttpServer(PORT, (request, response) -> {
-			ResponseHolder<ByteBuf> obs = null;
+			ResponseHolder<ByteBuf> serverReq = null;
 			try {
-				obs = new ProxyClient().sendRequest(request);
+				serverReq = new ProxyClient().sendRequest(request);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			printResponseHeaders(obs.getResponse());
-			response.write(obs.getContent().retain());
+			/*serverReq.subscribe(res -> {
+				System.out.println(res.getContent().toString(Charset.defaultCharset()));
+				System.out.println("");
+				printResponseHeaders(res.getResponse());
+				response.write(res.getContent().retain());
+			})*/;
+			printResponseHeaders(serverReq.getResponse());
+			response.write(serverReq.getContent().retain());
 			return response.close();
 		});
 	}
